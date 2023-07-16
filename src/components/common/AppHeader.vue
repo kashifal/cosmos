@@ -2,7 +2,8 @@
 header.app-header
   .app-header__container
     router-link.app-header__item(:to="{ name: 'index' }" @click.native='close')
-      img(src='~images/site/cosmos-wordmark.svg', alt='Cosmos Wordmark')
+      <!-- img(src='~images/site/cosmos-wordmark.svg', alt='Cosmos Wordmark') -->
+      span.main_logo 6MM
     .app-header__item(@click='toggleMenuApp', v-if='!desktop')
       i.material-icons(v-if='!activeMenuApp') menu
       i.material-icons(v-else='') close
@@ -102,6 +103,9 @@ export default {
 </script>
 
 <style lang="stylus">
+.main_logo {
+    font-size 2rem;
+}
 .headroom
   will-change transform
   transition transform 200ms linear
@@ -275,6 +279,8 @@ export default {
           border-color var(--secondary)
           span
             border-bottom-color var(--app-bg)
+
+
 
 @media screen and (min-width: 1280px)
   .app-header__container
